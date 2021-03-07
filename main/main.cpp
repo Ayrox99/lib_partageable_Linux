@@ -51,9 +51,9 @@ int main(int argc, char* argv[])
 
 	valeur2=composant2(data1,data2);
 
-	std::cout << getComposant1Version() << std::endl;
+	//std::cout << getComposant1Version() << std::endl;
 	std::cout << "valeur 1 :" << valeur1 << " valeur 2 :" << valeur2 << std::endl;
-	std::cout << *argv[3] << std::endl;
+	//std::cout << *argv[3] << std::endl;
 
     dlclose(handle1);
     dlclose(handle2);
