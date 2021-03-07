@@ -3,7 +3,7 @@ all: test
 
 test: install
 	cd bin; \
-	LD_LIBRARY_PATH=. ./main test1 test2
+	LD_LIBRARY_PATH=. ./main libComposant1.so libComposant2.so
 
 install:
 	cd main && ${MAKE} install
