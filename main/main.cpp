@@ -47,14 +47,14 @@ int main(int argc, char* argv[])
 	
 	valeur1=composant1(data1,data2);
 	valeur2=composant2(data1,data2);
-    cout << "valeur 1 :" << valeur1 << " valeur 2 :" << valeur2;
+    cout << "valeur 1 :" << valeur1 << " valeur 2 :" << valeur2 << "\n";
 
     getComposant1Version = (char* (*)()) dlsym(handle1, "_Z20getComposant1Versionv");
     if ((error = dlerror()) != NULL) {
         fputs(error, stderr);
         exit(1);
     }
-    cout << getComposant1Version();
+    cout << getComposant1Version() << "\n";
 
     dlclose(handle1);
     dlclose(handle2);
