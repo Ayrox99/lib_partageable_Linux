@@ -27,8 +27,11 @@ int main(int argc, char* argv[])
     dlerror();    /* Clear any existing error */
 
     *(void**)(&composant1) = dlsym(handle1, "_Z10composant1ii");
+    if ((error = dlerror()) != NULL) {
+        fprintf(stderr, "%s\n", error);
+        exit(EXIT_FAILURE);
+    }
     *(void**)(&composant2) = dlsym(handle2, "_Z10composant2ii");
-
     if ((error = dlerror()) != NULL) {
         fprintf(stderr, "%s\n", error);
         exit(EXIT_FAILURE);
