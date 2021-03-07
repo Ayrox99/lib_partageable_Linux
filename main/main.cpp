@@ -3,6 +3,7 @@
 #include "Composant1.h"
 #include "Composant2.h"
 #include <dlfcn.h>
+using namespace std;
 
 int main(int argc, char* argv[])
 {
