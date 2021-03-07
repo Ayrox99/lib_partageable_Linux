@@ -3,7 +3,7 @@ all: test
 
 test: install
 	cd bin; \
-	LD_LIBRARY_PATH=. ./main fromage
+	LD_LIBRARY_PATH=. ./main test1
 
 install:
 	cd main && ${MAKE} install
