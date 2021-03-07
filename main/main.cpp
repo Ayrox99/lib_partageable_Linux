@@ -8,8 +8,10 @@ int main(int argc, char* argv[])
 {
     void* handle1;
     void* handle2;
-    double (*composant1)(double);
-    double (*composant2)(double);
+    //double (*composant1)(double);
+    //double (*composant2)(double);
+    int (*composant1)(int, int);
+    int (*composant2)(int, int);
     char* error;
 
     handle1 = dlopen(argv[1], RTLD_LAZY);
@@ -26,12 +28,14 @@ int main(int argc, char* argv[])
 
     dlerror();    /* Clear any existing error */
 
-    *(void**)(&composant1) = dlsym(handle1, "_Z10composant1ii");
+    //*(void**)(&composant1) = dlsym(handle1, "_Z10composant1ii");
+    composant1 = (int (*)(int, int)) dlsym(handle1, "_Z10composant1ii");
     if ((error = dlerror()) != NULL) {
         fprintf(stderr, "%s\n", error);
         exit(EXIT_FAILURE);
     }
-    *(void**)(&composant2) = dlsym(handle2, "_Z10composant2ii");
+    //*(void**)(&composant2) = dlsym(handle2, "_Z10composant2ii");
+    composant2 = (int (*)(int, int)) dlsym(handle2, "_Z10composant2ii");
     if ((error = dlerror()) != NULL) {
         fprintf(stderr, "%s\n", error);
         exit(EXIT_FAILURE);
