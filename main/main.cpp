@@ -3,7 +3,7 @@
 #include "Composant1.h"
 #include "Composant2.h"
 
-int main(int argc, char ** argv)
+int main(int argc, char* argv[])
 {
 	int data1=3;
 	int data2=5;
